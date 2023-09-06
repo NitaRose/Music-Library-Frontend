@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Music_Library_Frontend.Data;
+using Music_Library_Frontend.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,12 +33,17 @@ namespace Music_Library_Frontend.Controllers
 
         // POST api/<SongsController>
         [HttpPost]
-        public IActionResult Post([FromBody] Models.Song song)
+        public IActionResult Post([FromBody] Song song)            
         {
-            _context.Songs.Add(song);
-            _context.SaveChanges();
-            return StatusCode(201, song);
+            if (ModelState.IsValid)
+            {
+                _context.Songs.Add(song);
+                _context.SaveChanges();
+                return StatusCode(201, song);
+            }
+            return BadRequest(ModelState);
         }
+           
 
         // PUT api/<SongsController>/5
         [HttpPut("{id}")]
