@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Music_Library_Frontend.Models
 {
@@ -9,7 +10,7 @@ namespace Music_Library_Frontend.Models
         public string Title { get; set; }
         public string Artist { get; set; }
         public string Album { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public int ReleaseDate { get; set; }
         public string Genre { get; set; }
     }
 }

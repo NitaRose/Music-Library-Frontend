@@ -12,7 +12,7 @@ namespace Music_Library_Frontend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230906002748_initial")]
-    partial class initial
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
