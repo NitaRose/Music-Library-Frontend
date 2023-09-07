@@ -35,13 +35,13 @@ namespace Music_Library_Frontend.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Song song)            
         {
-            if(ModelState.IsValid)
+           // if(ModelState.IsValid)
             {
                 _context.Songs.Add(song);
                 _context.SaveChanges();
                 return StatusCode(201, song);
             }
-            return BadRequest(ModelState);
+            //return BadRequest(ModelState);
         }
            
 
