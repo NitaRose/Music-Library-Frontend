@@ -37,8 +37,8 @@ namespace Music_Library_Frontend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ReleaseDate")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("Title")
                         .IsRequired()
